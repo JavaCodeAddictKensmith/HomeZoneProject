@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\HomeZone.Services.AuthAPI.props" />
+</Project>

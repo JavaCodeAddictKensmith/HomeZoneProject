@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1DMPh70u2G5Yig3zDFFMhqYW3owGfvlB2dK3XvLSHJk=",
+  "Source": "HomeZone.Services.AuthAPI",
+  "BasePath": "_content/HomeZone.Services.AuthAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
