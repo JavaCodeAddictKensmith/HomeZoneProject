@@ -4540,11 +4540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\HomeZone\\HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Documents\\HomeZone\\HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
       "projectName": "HomeZone.Services.AuthAPI",
-      "projectPath": "C:\\Users\\Dell\\Desktop\\HomeZone\\HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
+      "projectPath": "C:\\Users\\Dell\\Documents\\HomeZone\\HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Desktop\\HomeZone\\HomeZone.Services.AuthAPI\\obj\\",
+      "outputPath": "C:\\Users\\Dell\\Documents\\HomeZone\\HomeZone.Services.AuthAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

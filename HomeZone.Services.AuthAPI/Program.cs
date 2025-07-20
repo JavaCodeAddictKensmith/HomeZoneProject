@@ -2,7 +2,7 @@ using HomeZone.Services.AuthAPI.Data;
 using HomeZone.Services.AuthAPI.Models;
 using HomeZone.Services.AuthAPI.Service;
 using HomeZone.Services.AuthAPI.Service.IService;
-
+using HomeZone.Services.AuthAPI.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,8 +41,26 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+//await SeedRolesAsync(app); 
 ApplyMigration();
 app.Run();
+
+
+//async Task SeedRolesAsync(WebApplication app)
+//{
+//    using var scope = app.Services.CreateScope();
+//    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+//    string[] roles = { SD.RoleAdmin, SD.RoleCustomer };
+
+//    foreach (var role in roles)
+//    {
+//        if (!await roleManager.RoleExistsAsync(role))
+//        {
+//            await roleManager.CreateAsync(new IdentityRole(role));
+//        }
+//    }
+//}
 
 void ApplyMigration()
 {

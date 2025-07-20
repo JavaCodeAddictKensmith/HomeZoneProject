@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2xRN/0qV4GE=",
+  "dgSpecHash": "2Vsf9NakPhM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell\\Desktop\\HomeZone\\HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
+  "projectFilePath": "C:\\Users\\Dell\\Documents\\HomeZone\\HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

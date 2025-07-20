@@ -2,7 +2,9 @@
 using HomeZone.Services.AuthAPI.Models;
 using HomeZone.Services.AuthAPI.Models.Dto;
 using HomeZone.Services.AuthAPI.Service.IService;
+using HomeZone.Services.AuthAPI.Utility;
 using Microsoft.AspNetCore.Identity;
+using System.Text.RegularExpressions;
 
 namespace HomeZone.Services.AuthAPI.Service
 {
@@ -73,44 +75,165 @@ namespace HomeZone.Services.AuthAPI.Service
 
         public async Task<string> Register(RegistrationRequestDto registrationRequestDto)
         {
-            ApplicationUser user = new()
+            // Validate password strength
+            string password = registrationRequestDto.Password;
+            if (!Regex.IsMatch(password, @"[A-Z]") ||          // at least one uppercase
+                !Regex.IsMatch(password, @"[a-z]") ||          // at least one lowercase
+                !Regex.IsMatch(password, @"[\W_]"))            // at least one special character
             {
-                UserName = registrationRequestDto.Email,
-                Email = registrationRequestDto.Email,
-                NormalizedEmail = registrationRequestDto.Email.ToUpper(),
-                Name = registrationRequestDto.Name,
-                PhoneNumber = registrationRequestDto.PhoneNumber
-            };
+                return "Password must contain at least one uppercase letter, one lowercase letter, and one special character.";
+            }
+
+            // Validate role before user creation
+            string roleName = registrationRequestDto.Role?.ToUpper();
+            if (roleName != SD.RoleAdmin && roleName != SD.RoleCustomer)
+            {
+                return "Role must be either 'Admin' or 'Customer'.";
+            }
 
             try
             {
-                var result = await _userManager.CreateAsync(user, registrationRequestDto.Password);
-                if (result.Succeeded)
+                // Ensure role exists in the system
+                if (!await _roleManager.RoleExistsAsync(roleName))
                 {
-                    var userToReturn = _db.ApplicationUsers.First(u => u.UserName == registrationRequestDto.Email);
-
-                    UserDto userDto = new()
+                    var roleResult = await _roleManager.CreateAsync(new IdentityRole(roleName));
+                    if (!roleResult.Succeeded)
                     {
-                        Email = userToReturn.Email,
-                        ID = userToReturn.Id,
-                        Name = userToReturn.Name,
-                        PhoneNumber = userToReturn.PhoneNumber
-                    };
-
-                    return "";
-
+                        return "Failed to create role.";
+                    }
                 }
-                else
+
+                // Create the user
+                ApplicationUser user = new()
                 {
-                    return result.Errors.FirstOrDefault().Description;
+                    UserName = registrationRequestDto.Email,
+                    Email = registrationRequestDto.Email,
+                    NormalizedEmail = registrationRequestDto.Email.ToUpper(),
+                    Name = registrationRequestDto.Name,
+                    PhoneNumber = registrationRequestDto.PhoneNumber
+                };
+
+                var result = await _userManager.CreateAsync(user, password);
+                if (!result.Succeeded)
+                {
+                    return result.Errors.FirstOrDefault()?.Description ?? "User creation failed.";
                 }
 
+                // Assign role to user
+                var roleAssignResult = await _userManager.AddToRoleAsync(user, roleName);
+                if (!roleAssignResult.Succeeded)
+                {
+                    return "User was created but role assignment failed.";
+                }
+
+                return ""; // success
             }
             catch (Exception ex)
             {
-
+                // You should log the exception in real-world scenarios
+                return $"Error encountered: {ex.Message}";
             }
-            return "Error Encountered";
         }
+
+
+        //public async Task<string> Register(RegistrationRequestDto registrationRequestDto)
+        //{
+
+        //    // Password validation
+        //    string password = registrationRequestDto.Password;
+        //    if (!Regex.IsMatch(password, @"[A-Z]") ||          // at least one uppercase
+        //        !Regex.IsMatch(password, @"[a-z]") ||          // at least one lowercase
+        //        !Regex.IsMatch(password, @"[\W_]"))            // at least one non-alphanumeric
+        //    {
+        //        return "Password must contain at least one uppercase letter, one lowercase letter, and one special character.";
+        //    }
+
+        //    ApplicationUser user = new()
+        //    {
+        //        UserName = registrationRequestDto.Email,
+        //        Email = registrationRequestDto.Email,
+        //        NormalizedEmail = registrationRequestDto.Email.ToUpper(),
+        //        Name = registrationRequestDto.Name,
+        //        PhoneNumber = registrationRequestDto.PhoneNumber
+        //    };
+
+        //    try
+        //    {
+
+
+        //        // Validate and assign role
+        //        string roleName = registrationRequestDto.Role?.ToUpper();
+        //        if (roleName != SD.RoleAdmin && roleName != SD.RoleCustomer)
+        //        {
+        //            //roleName = SD.RoleCustomer; // default role
+        //            return "the role must either Admin or Customer, no other role is allowed";
+        //        }
+
+        //        if (!await _roleManager.RoleExistsAsync(roleName))
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole(roleName));
+        //        }
+
+        //        await _userManager.AddToRoleAsync(user, roleName);
+        //        var result = await _userManager.CreateAsync(user, password);
+        //        if (!result.Succeeded)
+        //        {
+        //            return result.Errors.FirstOrDefault()?.Description ?? "User creation failed.";
+        //        }
+        //        return "";
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return "Error Encountered";
+        //    }
+        //}
+
+
+
+
+
+
+        //public async Task<string> Register(RegistrationRequestDto registrationRequestDto)
+        //{
+        //    ApplicationUser user = new()
+        //    {
+        //        UserName = registrationRequestDto.Email,
+        //        Email = registrationRequestDto.Email,
+        //        NormalizedEmail = registrationRequestDto.Email.ToUpper(),
+        //        Name = registrationRequestDto.Name,
+        //        PhoneNumber = registrationRequestDto.PhoneNumber
+        //    };
+
+        //    try
+        //    {
+        //        var result = await _userManager.CreateAsync(user, registrationRequestDto.Password);
+        //        if (result.Succeeded)
+        //        {
+        //            var userToReturn = _db.ApplicationUsers.First(u => u.UserName == registrationRequestDto.Email);
+
+        //            UserDto userDto = new()
+        //            {
+        //                Email = userToReturn.Email,
+        //                ID = userToReturn.Id,
+        //                Name = userToReturn.Name,
+        //                PhoneNumber = userToReturn.PhoneNumber,
+
+        //            };
+
+        //            return "";
+
+        //        }
+        //        else
+        //        {
+        //            return result.Errors.FirstOrDefault().Description;
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //    return "Error Encountered";
+        //}
     }
 }

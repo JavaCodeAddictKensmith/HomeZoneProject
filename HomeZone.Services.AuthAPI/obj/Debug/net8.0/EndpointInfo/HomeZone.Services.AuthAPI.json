@@ -116,6 +116,9 @@
         "additionalProperties": false
       },
       "RegistrationRequestDto": {
+        "required": [
+          "role"
+        ],
         "type": "object",
         "properties": {
           "email": {
@@ -135,8 +138,8 @@
             "nullable": true
           },
           "role": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
