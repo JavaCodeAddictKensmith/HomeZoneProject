@@ -1,0 +1,103 @@
+[
+  {
+    "ContainingType": "HomeZone.Services.Wallet.Controllers.WalletController",
+    "Method": "CreateWallet",
+    "RelativePath": "api/walletapi/create-wallet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.Wallet.Controllers.WalletController",
+    "Method": "FundWallet",
+    "RelativePath": "api/walletapi/fund-wallet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HomeZone.Services.Wallet.Model.FundWalletRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.Wallet.Controllers.WalletController",
+    "Method": "TransferFromWalletToWallet",
+    "RelativePath": "api/walletapi/transfer-fund-from-wallet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HomeZone.Services.Wallet.Model.TranferFromWalletRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.Wallet.Controllers.WalletController",
+    "Method": "GetWalletDetailsAsync",
+    "RelativePath": "api/walletapi/view-wallet-details/{walletId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "walletId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.Wallet.Controllers.WalletController",
+    "Method": "WithdrawFromWallet",
+    "RelativePath": "api/walletapi/withdraw-from-wallet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HomeZone.Services.Wallet.Model.FundWalletRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.Wallet.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HomeZone.Services.Wallet.WeatherForecast, HomeZone.Services.Wallet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

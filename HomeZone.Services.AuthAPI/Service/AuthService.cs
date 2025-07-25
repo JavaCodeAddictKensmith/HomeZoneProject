@@ -4,6 +4,7 @@ using HomeZone.Services.AuthAPI.Models.Dto;
 using HomeZone.Services.AuthAPI.Service.IService;
 using HomeZone.Services.AuthAPI.Utility;
 using Microsoft.AspNetCore.Identity;
+using Org.BouncyCastle.Crypto.Generators;
 using System.Text.RegularExpressions;
 
 namespace HomeZone.Services.AuthAPI.Service
@@ -136,104 +137,33 @@ namespace HomeZone.Services.AuthAPI.Service
         }
 
 
-        //public async Task<string> Register(RegistrationRequestDto registrationRequestDto)
+
+
+
+        //public async Task<string> SetTransactionPinAsync(string userId, string pin)
         //{
+        //    if (!Regex.IsMatch(pin, @"^\d{4}$"))
+        //        return "PIN must be exactly 4 digits.";
 
-        //    // Password validation
-        //    string password = registrationRequestDto.Password;
-        //    if (!Regex.IsMatch(password, @"[A-Z]") ||          // at least one uppercase
-        //        !Regex.IsMatch(password, @"[a-z]") ||          // at least one lowercase
-        //        !Regex.IsMatch(password, @"[\W_]"))            // at least one non-alphanumeric
-        //    {
-        //        return "Password must contain at least one uppercase letter, one lowercase letter, and one special character.";
-        //    }
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    if (user == null) return "User not found.";
 
-        //    ApplicationUser user = new()
-        //    {
-        //        UserName = registrationRequestDto.Email,
-        //        Email = registrationRequestDto.Email,
-        //        NormalizedEmail = registrationRequestDto.Email.ToUpper(),
-        //        Name = registrationRequestDto.Name,
-        //        PhoneNumber = registrationRequestDto.PhoneNumber
-        //    };
+        //    user.TransactionPinHash = BCrypt.Net.BCrypt.HashPassword(pin);
+        //    var result = await _userManager.UpdateAsync(user);
+        //    return result.Succeeded ? "" : "Failed to save PIN.";
+        //}
 
-        //    try
-        //    {
+        //public async Task<bool> ValidateTransactionPinAsync(string userId, string pin)
+        //{
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    if (user == null || string.IsNullOrWhiteSpace(user.TransactionPinHash))
+        //        return false;
 
-
-        //        // Validate and assign role
-        //        string roleName = registrationRequestDto.Role?.ToUpper();
-        //        if (roleName != SD.RoleAdmin && roleName != SD.RoleCustomer)
-        //        {
-        //            //roleName = SD.RoleCustomer; // default role
-        //            return "the role must either Admin or Customer, no other role is allowed";
-        //        }
-
-        //        if (!await _roleManager.RoleExistsAsync(roleName))
-        //        {
-        //            await _roleManager.CreateAsync(new IdentityRole(roleName));
-        //        }
-
-        //        await _userManager.AddToRoleAsync(user, roleName);
-        //        var result = await _userManager.CreateAsync(user, password);
-        //        if (!result.Succeeded)
-        //        {
-        //            return result.Errors.FirstOrDefault()?.Description ?? "User creation failed.";
-        //        }
-        //        return "";
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return "Error Encountered";
-        //    }
+        //    return BCrypt.Net.BCrypt.Verify(pin, user.TransactionPinHash);
         //}
 
 
 
 
-
-
-        //public async Task<string> Register(RegistrationRequestDto registrationRequestDto)
-        //{
-        //    ApplicationUser user = new()
-        //    {
-        //        UserName = registrationRequestDto.Email,
-        //        Email = registrationRequestDto.Email,
-        //        NormalizedEmail = registrationRequestDto.Email.ToUpper(),
-        //        Name = registrationRequestDto.Name,
-        //        PhoneNumber = registrationRequestDto.PhoneNumber
-        //    };
-
-        //    try
-        //    {
-        //        var result = await _userManager.CreateAsync(user, registrationRequestDto.Password);
-        //        if (result.Succeeded)
-        //        {
-        //            var userToReturn = _db.ApplicationUsers.First(u => u.UserName == registrationRequestDto.Email);
-
-        //            UserDto userDto = new()
-        //            {
-        //                Email = userToReturn.Email,
-        //                ID = userToReturn.Id,
-        //                Name = userToReturn.Name,
-        //                PhoneNumber = userToReturn.PhoneNumber,
-
-        //            };
-
-        //            return "";
-
-        //        }
-        //        else
-        //        {
-        //            return result.Errors.FirstOrDefault().Description;
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //    return "Error Encountered";
-        //}
     }
 }

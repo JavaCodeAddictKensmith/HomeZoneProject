@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "HomeZone.Services.AuthAPI\\HomeZone.Services.AuthAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "HomeZone.Services.Wallet\\HomeZone.Services.Wallet.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

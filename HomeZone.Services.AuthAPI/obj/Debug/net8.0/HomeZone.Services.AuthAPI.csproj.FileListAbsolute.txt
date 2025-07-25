@@ -151,6 +151,7 @@ C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Auto
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -179,6 +180,7 @@ C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Micr
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\BouncyCastle.Crypto.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Dell\Documents\HomeZone\HomeZone.Services.AuthAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

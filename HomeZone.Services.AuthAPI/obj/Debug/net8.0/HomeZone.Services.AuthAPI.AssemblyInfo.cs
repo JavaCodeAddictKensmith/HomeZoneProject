@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeZone.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+864e9fc0737ee9379a8aaf99774ccf1ada6b1cc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a29faf6bed44192f82ed557841bfdab0cbbae90")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeZone.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeZone.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

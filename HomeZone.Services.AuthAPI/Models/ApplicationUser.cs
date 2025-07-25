@@ -6,5 +6,6 @@ namespace HomeZone.Services.AuthAPI.Models
 
     {
         public string Name {  get; set; }
+        public string? TransactionPinHash { get; set; }
     }
 }

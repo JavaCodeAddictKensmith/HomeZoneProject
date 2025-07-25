@@ -46,5 +46,47 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.AuthAPI.Controllers.TransactionController",
+    "Method": "SetPin",
+    "RelativePath": "api/transactionpin/{userId}/set-pin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HomeZone.Services.AuthAPI.Models.Dto.SetPinDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeZone.Services.AuthAPI.Controllers.TransactionController",
+    "Method": "ValidatePin",
+    "RelativePath": "api/transactionpin/{userId}/validate-pin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HomeZone.Services.AuthAPI.Models.Dto.ValidatePinDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

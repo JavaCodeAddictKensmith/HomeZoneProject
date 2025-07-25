@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeZone.Services.AuthAPI", "HomeZone.Services.AuthAPI\HomeZone.Services.AuthAPI.csproj", "{0AF13E8F-9E13-4CEF-9ADC-042DAA60026F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeZone.Services.Wallet", "HomeZone.Services.Wallet\HomeZone.Services.Wallet.csproj", "{4B8BD0A3-6164-489D-83F7-10792F1123F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{0AF13E8F-9E13-4CEF-9ADC-042DAA60026F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF13E8F-9E13-4CEF-9ADC-042DAA60026F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF13E8F-9E13-4CEF-9ADC-042DAA60026F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0AF13E8F-9E13-4CEF-9ADC-042DAA60026F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4B8BD0A3-6164-489D-83F7-10792F1123F3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28EA86CC-3616-495B-9543-A1CBA341F390}

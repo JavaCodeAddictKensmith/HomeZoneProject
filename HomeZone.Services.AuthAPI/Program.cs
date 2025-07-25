@@ -19,6 +19,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFramework
 builder.Services.AddControllers();
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITransactionPinService, TransactionPinService>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -41,26 +43,26 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-//await SeedRolesAsync(app); 
+await SeedRolesAsync(app); 
 ApplyMigration();
 app.Run();
 
 
-//async Task SeedRolesAsync(WebApplication app)
-//{
-//    using var scope = app.Services.CreateScope();
-//    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+async Task SeedRolesAsync(WebApplication app)
+{
+    using var scope = app.Services.CreateScope();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-//    string[] roles = { SD.RoleAdmin, SD.RoleCustomer };
+    string[] roles = { SD.RoleAdmin, SD.RoleCustomer };
 
-//    foreach (var role in roles)
-//    {
-//        if (!await roleManager.RoleExistsAsync(role))
-//        {
-//            await roleManager.CreateAsync(new IdentityRole(role));
-//        }
-//    }
-//}
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+}
 
 void ApplyMigration()
 {
