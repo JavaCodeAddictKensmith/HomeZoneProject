@@ -1,0 +1,6 @@
+@HomeZone.Services.SavingsAPI_HostAddress = http://localhost:5225
+
+GET {{HomeZone.Services.SavingsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

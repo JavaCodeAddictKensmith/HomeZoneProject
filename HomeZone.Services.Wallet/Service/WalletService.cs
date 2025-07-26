@@ -115,27 +115,6 @@ namespace HomeZone.Services.Wallet.Service
 
 
 
-        //public async Task<ResponseWrapper<WalletResponseDto>> GetWalletDetailsAsync(string WalletId)
-        //{
-        //    //_db.Wallets.Any(w => w.Id == WalletId);
-        //    var userId = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
-        //    if (string.IsNullOrEmpty(userId))
-        //     return new ResponseWrapper<WalletResponseDto>(null, "User not authenticated.", false);
-        //    //var wallet = _db.Wallets.FirstOrDefault(w => w.ApplicationUserId == userId);
-        //    var wallet = await _db.Wallets.FirstOrDefaultAsync(w => w.Id.ToString() == WalletId);
-        //    if (wallet == null)
-        //        return new ResponseWrapper<WalletResponseDto>(null, "Wallet not found.", false);
-        //    var walletResult = new WalletResponseDto
-        //    {
-        //        Id=wallet.Id.ToString(),
-        //        Name = wallet.Name,
-        //        WalletNumber = wallet.WalletNumber,
-        //        Balance=wallet.Balance,
-        //        ApplicationUserId = wallet.ApplicationUserId
-        //    };
-
-        //    return new ResponseWrapper<WalletResponseDto>(walletResult, "Wallet fetched successfully.", true);
-        //}
 
         public async Task<ResponseWrapper<string>> TransferFromWalletToAnotherWalletAsync(string WalletAccount, decimal Amount, string pin)
         {
@@ -164,7 +143,7 @@ namespace HomeZone.Services.Wallet.Service
             var receipientWallet = await _db.Wallets.FirstOrDefaultAsync(w => w.WalletNumber == WalletAccount);
             if (receipientWallet == null)
                 return new ResponseWrapper<string>(null, "Recipient wallet not found.", false);
-            if (receipientWallet.Id == mywallet.Id)
+            if (receipientWallet.WalletNumber == mywallet.WalletNumber)
                 return new ResponseWrapper<string>(null, "You can only transfer to another account.", false);
 
             // Perform transfer

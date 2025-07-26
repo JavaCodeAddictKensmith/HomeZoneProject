@@ -9,6 +9,10 @@
       {
         "Path": "HomeZone.Services.Wallet\\HomeZone.Services.Wallet.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "HomeZone.Services.SavingsAPI\\HomeZone.Services.SavingsAPI.csproj",
+        "Action": "Start"
       }
     ]
   }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeZone.Services.AuthAPI",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeZone.Services.Wallet", "HomeZone.Services.Wallet\HomeZone.Services.Wallet.csproj", "{4B8BD0A3-6164-489D-83F7-10792F1123F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeZone.Services.SavingsAPI", "HomeZone.Services.SavingsAPI\HomeZone.Services.SavingsAPI.csproj", "{4A40EFEE-B070-4508-81D0-A184E9494E2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B8BD0A3-6164-489D-83F7-10792F1123F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A40EFEE-B070-4508-81D0-A184E9494E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A40EFEE-B070-4508-81D0-A184E9494E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A40EFEE-B070-4508-81D0-A184E9494E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A40EFEE-B070-4508-81D0-A184E9494E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0AF13E8F-9E13-4CEF-9ADC-042DAA60026F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{4B8BD0A3-6164-489D-83F7-10792F1123F3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4A40EFEE-B070-4508-81D0-A184E9494E2E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28EA86CC-3616-495B-9543-A1CBA341F390}
